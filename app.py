@@ -47,14 +47,20 @@ else:
     
     with col1:
         if st.button("SIM! ✅"):
-            st.balloons()
+            st.balloons() # Balões para o SIM
             st.success("ELA DISSE SIM! ❤️ Nosso futuro começa agora! 💍")
             st.write("Tira um print e me manda! Te amo!")
             
     with col2:
         if st.button("NÃO... ❌"):
-            st.error("⚠️ SISTEMA DE SEGURANÇA ACIONADO")
-            st.warning("Detectamos uma resposta inválida. Processando contrato alternativo...")
+            # Efeito visual de "erro" e os HAHAHAHA
+            st.snow() # Isso faz "nevar" na tela, dando o efeito visual de movimento
+            
+            st.error("🚨 SISTEMA INVADIDO! OPÇÃO BLOQUEADA!")
+            
+            # Subindo os HAHAHAHA na lateral/corpo do site
+            for _ in range(5):
+                st.write("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
             
             # Informações do "Financiamento"
             st.markdown("### 📄 CONTRATO DE FINANCIAMENTO OBRIGATÓRIO")
@@ -69,8 +75,8 @@ VALOR TOTAL: R$ 110.000,00
 PARCELAMENTO: 48x de R$ 4.230,00
             """, language="text")
             
-            st.markdown("<h4 style='text-align: center; color: red;'>SUA OPÇÃO DE NÃO SE TORNA UM FINANCIAMENTO OBRIGATÓRIO HAHAHAHA!</h4>", unsafe_allow_html=True)
-            st.info("Dica: Clique no botão 'SIM' para cancelar este débito! 😉")
+            st.markdown("<h3 style='text-align: center; color: red;'>SUA OPÇÃO DE NÃO SE TORNA UM FINANCIAMENTO OBRIGATÓRIO HAHAHAHA!</h3>", unsafe_allow_html=True)
+            st.warning("Dica: Clique no botão 'SIM' para cancelar esta dívida imediatamente! 😂")
 
     st.write("---")
-    st.caption("Criado com amor via Forja ⚒️")
+    st.caption("Criado com carinho via Forja ⚒️")
