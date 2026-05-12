@@ -1,33 +1,33 @@
 import streamlit as st
 
 # Configuração da página
-st.set_page_config(page_title="Acesso Secreto", page_icon="🐈")
+st.set_page_config(page_title="Acesso Privado", page_icon="🐈")
 
-# Estilo para centralizar o layout no mobile
-st.markdown("<h1 style='text-align: center;'>Bem-vindo!</h1>", unsafe_allow_html=True)
+# Título centralizado
+st.markdown("<h2 style='text-align: center;'>Área Restrita</h2>", unsafe_allow_html=True)
 
-# 1. O Gato dando tchau (usando um GIF da internet)
-# Se o link quebrar, você pode trocar por outro link de GIF de gato
-col1, col2, col3 = st.columns([1, 2, 1])
+# 1. O Gato dando tchau (GIF Centralizado)
+col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
-    st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXJpZzR6eXNidGZ6cnR6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCB3YXZpbmdfY2F0/3o72EX5QZ9N9d51dqo/giphy.gif", use_column_width=True)
+    # GIF de um gatinho fofo dando tchau
+    st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihTlgA/giphy.gif", use_column_width=True)
 
-st.markdown("<p style='text-align: center;'>Dê um tchauzinho de volta e digite a senha!</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>O gato só deixa passar quem tem a senha!</p>", unsafe_allow_html=True)
 
-# 2. Campo de Senha
-# O parâmetro type="password" faz os caracteres virarem bolinhas
-senha = st.text_input("Digite a senha secreta:", type="password")
+# 2. Entrada da Senha (A senha agora é 06022026)
+senha = st.text_input("Insira o código de acesso:", type="password")
 
-# 3. Lógica de entrada
+# 3. Verificação
 if senha:
-    if senha == "forja123": # Você pode escolher a senha que quiser aqui
-        st.success("Acesso liberado!")
+    if senha == "06022026":
+        st.success("Acesso confirmado! Bem-vindo.")
         st.balloons()
         
-        # Aqui começa o conteúdo "secreto" do site
-        st.write("---")
-        st.subheader("Você entrou na área secreta da Forja ⚒️")
-        st.write("Agora sim podemos começar a brincadeira!")
+        # Conteúdo que aparece após acertar a senha
+        st.divider()
+        st.markdown("### 🎉 Você entrou!")
+        st.write("Este é o início do nosso projeto mobile.")
+        st.info("O que vamos construir nesta área agora?")
         
     else:
-        st.error("Senha incorreta! O gato ficou triste. 😿")
+        st.error("Senha incorreta. Tente novamente!")
