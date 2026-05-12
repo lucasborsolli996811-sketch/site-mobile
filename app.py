@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Configuração da página
+# Configuração da página - Tema romântico
 st.set_page_config(page_title="Para Danielly ❤️", page_icon="💍")
 
 # Inicializa o estado de acesso
@@ -11,7 +11,7 @@ if 'logado' not in st.session_state:
 if not st.session_state.logado:
     st.markdown("<h2 style='text-align: center;'>🔒 Área Restrita</h2>", unsafe_allow_html=True)
     
-    # O Gato dando tchau
+    # O Gato dando tchau (GIF de comédia)
     st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXAxbW1idGZ0ZzVqbmhxdm94bmhxbmhxbmhxbmhxbmhxbmhxbmhxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihTlgA/giphy.gif", use_container_width=True)
     
     st.markdown("<p style='text-align: center;'>O gatinho está guardando uma surpresa!</p>", unsafe_allow_html=True)
@@ -21,9 +21,9 @@ if not st.session_state.logado:
     
     # BOTÃO DE DICA
     if st.button("💡 Precisa de uma dica?"):
-        st.info("Dica: É a data do nosso primeiro encontro! (DDMMAAAA)")
+        st.info("Dica: É a data do nosso primeiro encontro! (06022026)")
 
-    # Verificação da senha (06022026)
+    # Verificação da senha
     if senha == "06022026":
         st.session_state.logado = True
         st.rerun()
@@ -53,7 +53,24 @@ else:
             
     with col2:
         if st.button("NÃO... ❌"):
-            st.warning("Erro no sistema: Essa opção não está disponível para você! Escolha o outro botão. 😉")
+            st.error("⚠️ SISTEMA DE SEGURANÇA ACIONADO")
+            st.warning("Detectamos uma resposta inválida. Processando contrato alternativo...")
+            
+            # Informações do "Financiamento"
+            st.markdown("### 📄 CONTRATO DE FINANCIAMENTO OBRIGATÓRIO")
+            st.code(f"""
+NOME: DANIELLY FERREIRA DOS SANTOS
+CPF: 425.577.968-67
+RG: 54.057.250-0
+DATA NASCIMENTO: 21/01/2007
+
+OBJETO: FINANCIAMENTO DO CIVIC 2020
+VALOR TOTAL: R$ 110.000,00
+PARCELAMENTO: 48x de R$ 4.230,00
+            """, language="text")
+            
+            st.markdown("<h4 style='text-align: center; color: red;'>SUA OPÇÃO DE NÃO SE TORNA UM FINANCIAMENTO OBRIGATÓRIO HAHAHAHA!</h4>", unsafe_allow_html=True)
+            st.info("Dica: Clique no botão 'SIM' para cancelar este débito! 😉")
 
     st.write("---")
     st.caption("Criado com amor via Forja ⚒️")
